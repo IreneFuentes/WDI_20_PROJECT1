@@ -25,7 +25,7 @@ function play(player){
       updatePlayerInfo(player);
       mole.off();
       play(player);
-    }, 1500);
+    }, 1000);
 
     mole.on("click", function(){
       clearTimeout(timeout);
@@ -36,11 +36,14 @@ function play(player){
 
     })
   } else {
+    $('.cell').removeClass('up'); 
+    $(".cell").addClass("down");
     currentPlayer = player2;
     showPlayerTurn(currentPlayer);
 
     if (player2.lives === 0) {
-      $("#gameOver").css({"display":"block"})
+      $("#gameOver").css({"display":"block"});
+      gameOver();
     } 
   }
 }
@@ -57,6 +60,40 @@ function showPlayerTurn(player) {
 
 // }
 
+var gameOver = function() {
+
+    score1 = player1.score;
+    score2 = player2.score;
+
+    console.log("PLAYER 1 SCORE: " + score1);
+    console.log("PLAYER 2 SCORE: " + score2);
+
+    if (score1 > score2){
+      console.log("PLAYER ONE WINS!");
+      $("#gameOver").html("GAME OVER<br>PLAYER ONE WINS!")
+    }
+    else if(score1 < score2){
+      // Player 2 Wins
+      console.log("PLAYER TWO WINS!");
+      $("#gameOver").html("GAME OVER<br>PLAYER TWO WINS!")
+    }
+    else {
+      // tie
+      console.log("TIE!");
+      $("#gameOver").html("GAME OVER<br>TIE!")
+
+    }
+
+    //  if (score1 > score2) {
+    //   player1 = winner;
+    //   console.log("player1Win");
+    // } else if (score1 = score2) {
+    //   console.log(tie);
+    // } else {
+    //   player2 = winner;
+    // }
+  }
+
 $(function(){
   currentPlayer = player1;
   showPlayerTurn(currentPlayer);
@@ -66,7 +103,16 @@ $(function(){
     currentPlayer.score = 0;
     updatePlayerInfo(currentPlayer);
     play(currentPlayer);
+
   });
+
+  //A partir de aqui es lo nuevo para añadir la informacion en la pantalla de game over
+
+
+
+
+
+
 
 });
 
