@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> TOPO GAME</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <!-- //tengo que añadir fancy box con CSS -->
+
+</head>
+
+<body>
+
+
+  <div id ="container">
+
+   <div id="player1" class="player"> 
+    <h3>PLAYER 1</h3>
+    <div class="lives">
+      <p>LIVES</p> 
+      <p id="player1-lives"></p>
+    </div>
+    <div class="score">
+      <p>SCORE</p>     
+      <p id="player1-score"></p>
+    </div>
+  </div>
+
+  
+  <div id ="tittle">
+    <h1>Whack a Mole</h1>
+    <p id="playerTurn">TURN: PLAYER 1</p>
+    <button id="play">PLAY</button>
+  </div>
+
+  
+  <div id="player2" class="player">
+    <h3>PLAYER 2</h3>
+    <div class="lives">
+      <p>LIVES</p>
+      <p id="player2-lives"></p>
+    </div>
+    <div class="score">
+      <p>SCORE</p>
+      <p id="player2-score"></p> 
+    </div>
+  </div>
+</div>
+
+<div id ="Box">
+
+  
+
+  <div id="column1-row1" class="cell down"></div>
+  <div id="column2-row1" class="cell down"></div>
+  <div id="column3-row1" class="cell down"></div>
+  <div id="column4-row1" class="cell down"></div>
+  <div id="column5-row1" class="cell down"></div>
+  <div id="column6-row1" class="cell down"></div>
+  <div id="column7-row1" class="cell down"></div>
+  <div id="column8-row1" class="cell down"></div>
+
+  <div id="column1-row2" class="cell down"></div>
+  <div id="column2-row2" class="cell down"></div>
+  <div id="column3-row2" class="cell down"></div>
+  <div id="column4-row2" class="cell down"></div>
+  <div id="column5-row2" class="cell down"></div>
+  <div id="column6-row2" class="cell down"></div>
+  <div id="column7-row2" class="cell down"></div>
+  <div id="column8-row2" class="cell down"></div>
+
+  <div id="column1-row3" class="cell down"></div>
+  <div id="column2-row3" class="cell down"></div>
+  <div id="column3-row3" class="cell down"></div> 
+  <div id="column4-row3" class="cell down"></div>
+  <div id="column5-row3" class="cell down"></div>
+  <div id="column6-row3" class="cell down"></div>
+  <div id="column7-row3" class="cell down"></div>
+  <div id="column8-row3" class="cell down"></div>
+
+  <div id="column1-row4" class="cell down"></div>
+  <div id="column2-row4" class="cell down"></div>
+  <div id="column3-row4" class="cell down"></div>
+  <div id="column4-row4" class="cell down"></div>
+  <div id="column5-row4" class="cell down"></div>
+  <div id="column6-row4" class="cell down"></div>
+  <div id="column7-row4" class="cell down"></div>
+  <div id="column8-row4" class="cell down"></div>
+
+ 
+
+</div>
+
+<div id="gameOver">
+  <h3>GAME OVER</h3>
+  <div id="winner"></div>
+</div>
+<!-- <audio id="audioMole"></audio>
+<audio id="audioHole"></audio>
+<audio id="audioLose"></audio> -->
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
