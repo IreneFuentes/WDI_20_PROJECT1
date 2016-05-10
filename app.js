@@ -1,5 +1,5 @@
-var player1 = {id: 1, lives: 3, score: 0, name:"PLAYER 1"};
-var player2 = {id: 2, lives: 3, score: 0, name:"PLAYER 2"};
+var player1 = {id: 1, lives: 5, score: 0, name:"PLAYER 1"};
+var player2 = {id: 2, lives: 5, score: 0, name:"PLAYER 2"};
 var currentPlayer;
 // var audioMole
  
@@ -27,7 +27,7 @@ function play(player){
       updatePlayerInfo(player);
       mole.off();
       play(player);
-    }, 900);
+    }, 1000);
 
     mole.on("click", function(){
       
@@ -63,7 +63,9 @@ function showPlayerTurn(player) {
 
 
 var gameOver = function() {
-
+    new Audio('Ta Da-SoundBible.com-1884170640.mp3').play();
+    
+    console.log(Audio);
     score1 = player1.score;
     score2 = player2.score;
 
@@ -83,7 +85,6 @@ var gameOver = function() {
       
       // console.log("TIE!");
       $("#gameOver").html("GAME OVER<br><br>TIE!")
-
     }
   }
 
@@ -92,7 +93,7 @@ $(function(){
   showPlayerTurn(currentPlayer);
   updatePlayerInfo(currentPlayer);
   $("#play").on("click", function(){
-    currentPlayer.lives = 3;
+    currentPlayer.lives = 5;
     currentPlayer.score = 0;
     updatePlayerInfo(currentPlayer);
     play(currentPlayer);
