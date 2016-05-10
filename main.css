@@ -3,17 +3,23 @@ body {
   background: black;
   text-align: center;
   color: white;
+  
+
 }
-
-
 
 #Box {
   width: 1200px;
-  height: 300;
+  height: 250px;
   /*padding-top: 65px;*/
-  margin: 40px 20px;
+  margin: 40px 35px;
+  cursor: url(hammer5.gif), auto;
+  -webkit-cursor: url(hammer5.gif), auto;
+  -moz-
 
 }
+/*#Box:hover {
+  cursor: url("hammer 1.gif"), auto;
+}*/
 
 .cell {
 
@@ -29,16 +35,14 @@ body {
   background-position: center;
   background-image: url("mole.png");
   background-size: contain;
-  background-position: center;
-  
+  background-position: center;  
 }
 
 .down {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("hole.png");
-  background-size: contain;
-  
+  background-size: contain;  
 }
 
 h1 {
@@ -82,7 +86,6 @@ background: #6CB853;
 background-size: contain;
 margin-top: 0px;
 
-
 } 
 
 .lives p {
@@ -96,7 +99,6 @@ margin-top: 0px;
 .lives {
   margin-bottom: 20px;
   /*border-bottom: 1px solid white;*/
-
 }
 
 #gameOver {
@@ -113,5 +115,7 @@ margin-top: 0px;
   font-size: 40px;
   text-align: center;
   margin-top: 40px;
+  border: 3px solid black;
 }
+ 
 

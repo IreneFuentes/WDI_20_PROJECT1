@@ -1,6 +1,7 @@
 var player1 = {id: 1, lives: 3, score: 0, name:"PLAYER 1"};
 var player2 = {id: 2, lives: 3, score: 0, name:"PLAYER 2"};
 var currentPlayer;
+// var audioMole
  
 
 function showRandomMole() {
@@ -21,13 +22,16 @@ function play(player){
     var mole = showRandomMole();
 
     var timeout = setTimeout(function() {
+      new Audio('http://www.pachd.com/a/button/button1.wav').play();
       player.lives --;
       updatePlayerInfo(player);
       mole.off();
       play(player);
-    }, 1000);
+    }, 900);
 
     mole.on("click", function(){
+      
+      new Audio("beep9.mp3").play();
       clearTimeout(timeout);
       player.score += 100;
       updatePlayerInfo(player);
@@ -56,42 +60,31 @@ function showPlayerTurn(player) {
   $("#playerTurn").text("Turn: " + player.name);
 }
 
-// function resetGame () {
 
-// }
 
 var gameOver = function() {
 
     score1 = player1.score;
     score2 = player2.score;
 
-    console.log("PLAYER 1 SCORE: " + score1);
-    console.log("PLAYER 2 SCORE: " + score2);
+    // console.log("PLAYER 1 SCORE: " + score1);
+    // console.log("PLAYER 2 SCORE: " + score2);
 
     if (score1 > score2){
-      console.log("PLAYER ONE WINS!");
-      $("#gameOver").html("GAME OVER<br>PLAYER ONE WINS!")
+      // console.log("PLAYER ONE WINS!");
+      $("#gameOver").html("GAME OVER<br><br>PLAYER ONE WINS!")
     }
     else if(score1 < score2){
-      // Player 2 Wins
-      console.log("PLAYER TWO WINS!");
-      $("#gameOver").html("GAME OVER<br>PLAYER TWO WINS!")
+      
+      // console.log("PLAYER TWO WINS!");
+      $("#gameOver").html("GAME OVER<br><br>PLAYER TWO WINS!")
     }
     else {
-      // tie
-      console.log("TIE!");
-      $("#gameOver").html("GAME OVER<br>TIE!")
+      
+      // console.log("TIE!");
+      $("#gameOver").html("GAME OVER<br><br>TIE!")
 
     }
-
-    //  if (score1 > score2) {
-    //   player1 = winner;
-    //   console.log("player1Win");
-    // } else if (score1 = score2) {
-    //   console.log(tie);
-    // } else {
-    //   player2 = winner;
-    // }
   }
 
 $(function(){
@@ -105,14 +98,6 @@ $(function(){
     play(currentPlayer);
 
   });
-
-  //A partir de aqui es lo nuevo para añadir la informacion en la pantalla de game over
-
-
-
-
-
-
 
 });
 
